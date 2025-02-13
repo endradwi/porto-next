@@ -1,15 +1,20 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
 import Navbar from "./components/Navbar";
 import Introduction from "./components/Introduction";
 import Project from "./components/Project";
+import AOS from 'aos'
+import 'aos/dist/aos.css'; 
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(()=>{
+    AOS.init();
+  }, [])
   return (
     <>
       <Navbar />
       <Introduction />
-      <article className="px-28 flex items-center justify-around mt-5 py-5 ">
+      <article id='about' className="px-28 flex items-center justify-around mt-5 py-5 ">
         <span className="text-6xl font-bold flex justify-center items-center">About Me</span>
         <p className="max-w-6xl text-xl/8 text-justify bg-gray-400 rounded-2xl p-10 shadow-blue-950 shadow-2xl">
           I am a Frontend Developer with experience in building scalable,
@@ -24,6 +29,7 @@ export default function Home() {
         </p>
       </article>
       <Project />
+     
     </>
   );
 }
