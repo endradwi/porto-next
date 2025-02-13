@@ -8,7 +8,8 @@ function Introduction() {
   return (
     <div className="w-full flex justify-between px-28 py-20 items-center bg-[#3674B5]">
       <div className="space-y-20">
-        <div className="text-7xl font-extrabold bg-gradient-to-r from-yellow-300 via-orange-300 text-transparent bg-clip-text">Hello, I'm</div>
+        <div className="text-7xl font-extrabold bg-gradient-to-r from-yellow-300 via-orange-300 text-transparent bg-clip-text">Hello, I&apos;m</div>
+
         <TypeAnimation
       sequence={[
         'Endra Dwi Jamaludin',
