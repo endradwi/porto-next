@@ -15,7 +15,7 @@ function Introduction() {
         1000, 
         'Front-End Developer',
         1000
-      ]}
+    ]}
       speed={30}
       repeat={Infinity}
       className="text-7xl font-extrabold"
