@@ -5,14 +5,36 @@ import Project from "./components/Project";
 import AOS from 'aos'
 import 'aos/dist/aos.css'; 
 import { useEffect } from "react";
+// import Lanyard from "./components/Band";
+import next from "@/app/assets/nextjs.png"
+import js from "@/app/assets/js.png"
+import react from "@/app/assets/react.png"
+import vue from "@/app/assets/vue.png"
+import nuxt from "@/app/assets/nuxt.png"
+import tailwind from "@/app/assets/tailwind.png"
+import golang from "@/app/assets/golang.png"
+import docker from "@/app/assets/docker.png"
+import ScrollVelocity from "./components/ScrollVelocity/ScrollVelocity";
 
 export default function Home() {
   useEffect(()=>{
     AOS.init();
   }, [])
+  const images = [
+    {src: js.src, alt:"tikets image",},
+    {src: react.src, alt:"React Image",},
+    {src: next.src, alt:"Next image",},
+    {src: vue.src, alt:"Vue image",},
+    {src: nuxt.src, alt:"Nuxt image",},
+    {src: tailwind.src, alt:"Tailwind image",},
+    {src: golang.src, alt:"Golang image",},
+    {src: docker.src, alt:"Golang image",},
+]
+console.log(images[0].src)
   return (
     <>
       <Navbar />
+      {/* <Lanyard/> */}
       <Introduction />
       <article id='about' className="px-28 flex items-center justify-around mt-5 py-5 ">
         <span className="text-6xl font-bold flex justify-center items-center">About Me</span>
@@ -29,7 +51,14 @@ export default function Home() {
         </p>
       </article>
       <Project />
-     
+      <ScrollVelocity
+        texts={images}
+        velocity={100}
+        // numCopies={1}
+        // className="mx-4"
+        scrollerClassName="gap-8"
+        parallaxClassName="overflow-hidden"
+      />
     </>
   );
 }
