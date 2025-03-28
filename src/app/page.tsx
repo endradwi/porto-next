@@ -6,6 +6,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'; 
 import { useEffect } from "react";
 import Skills from "./components/Skills";
+import ExperienseJob from "./components/ExperienseJob";
 // import Lanyard from "./components/Band";
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
           and business needs.
         </p>
       </article>
+      <ExperienseJob/>
       <Project />
       
     </>
