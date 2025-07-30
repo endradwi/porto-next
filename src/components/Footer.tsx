@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 // import { useState } from "react";
-import {  Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import {  Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
   // const [formData, setFormData] = useState({
@@ -93,7 +93,7 @@ const Footer = () => {
             
             <div className="flex flex-wrap gap-4">
               <motion.a
-                href="https://github.com/yourusername"
+                href="https://github.com/endradwi"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -105,7 +105,7 @@ const Footer = () => {
               </motion.a>
               
               <motion.a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/endrdwijamaludin"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -116,29 +116,6 @@ const Footer = () => {
                 LinkedIn
               </motion.a>
               
-              <motion.a
-                href="https://twitter.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex items-center gap-2 bg-[#03C988] text-[#13005A] px-4 py-3 rounded-lg font-semibold hover:bg-[#02A876] transition-all duration-200"
-              >
-                <Twitter size={20} />
-                Twitter
-              </motion.a>
-              
-              <motion.a
-                href="https://instagram.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex items-center gap-2 bg-[#03C988] text-[#13005A] px-4 py-3 rounded-lg font-semibold hover:bg-[#02A876] transition-all duration-200"
-              >
-                <Instagram size={20} />
-                Instagram
-              </motion.a>
             </div>
           </div>
         </motion.div>
