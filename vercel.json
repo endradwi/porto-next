@@ -2,7 +2,7 @@
     "redirects": [
       {
         "source": "/(.*)",
-        "destination": "https://endradwi.my.id/$1",
+        "destination": "https://endradwi.my.id",
         "permanent": true
       }
     ]
