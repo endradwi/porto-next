@@ -39,10 +39,8 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#FBE4D6' }}>
+    <section id="education" className="py-20 relative overflow-hidden">
       {/* Background Light Rays */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-white opacity-20"></div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           ref={ref}
@@ -51,18 +49,18 @@ const Education = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#03C988] mb-6">
             ACADEMIC MILESTONE
           </h2>
-          <div className="w-24 h-1 mx-auto mb-4" style={{ backgroundColor: '#261FB3' }}></div>
-          <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-            My academic journey and educational achievements
+          <div className="w-24 h-1 bg-[#03C988] mx-auto mb-8"></div>
+          <p className="text-white text-lg max-w-2xl mx-auto">
+            My academic journey
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Central Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-2 h-full rounded-full" style={{ background: 'linear-gradient(to bottom, #261FB3, #161179, #0C0950)' }}></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-2 h-full rounded-full bg-[#1C82AD]"></div>
           
           {education.map((edu, index) => (
             <motion.div
@@ -84,23 +82,23 @@ const Education = () => {
                     {edu.year.slice(-2)}
                   </div>
                   {/* Connecting line to content */}
-                  <div className={`absolute top-1/2 transform -translate-y-1/2 w-8 h-0.5 hidden md:block left-full`} style={{ backgroundColor: '#0C0950' }}></div>
+                  <div className="absolute top-1/2 transform -translate-y-1/2 w-8 h-0.5 hidden md:block left-full bg-white"></div>
                 </div>
 
                 {/* Content Card */}
-                <div className={`bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-sm md:max-w-md border border-gray-100 relative ${
+                <div className={`bg-[#1C82AD] rounded-xl shadow-lg p-6 md:p-8 max-w-sm md:max-w-md border border-[#03C988] relative ${
                   index % 2 === 0 ? 'md:ml-4' : 'md:mr-12'
                 }`}>
                   {/* Header */}
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-2xl font-bold text-[#13005A] mb-2">
                       {edu.degree}
                     </h3>
-                    <div className="flex items-center gap-2 font-semibold mb-2" style={{ color: '#261FB3' }}>
+                    <div className="flex items-center gap-2 font-semibold mb-2 text-[#00337C]">
                       <BookOpen className="w-4 h-4" />
                       {edu.school}
                     </div>
-                    <div className="flex flex-col sm:flex-row gap-4 text-sm text-gray-600">
+                    <div className="flex flex-col sm:flex-row gap-4 text-sm text-[#00337C]">
                       <div className="flex items-center gap-2">
                         <MapPin className="w-4 h-4" />
                         {edu.location}
@@ -114,7 +112,7 @@ const Education = () => {
 
                   {/* GPA Badge */}
                   {edu.gpa && <div className="mb-4">
-                    <span className="px-3 py-1 rounded-full text-sm font-semibold text-white" style={{ backgroundColor: '#161179' }}>
+                    <span className="px-3 py-1 rounded-full text-sm font-semibold text-[#03C988] bg-[#13005A]">
                       GPA: {edu.gpa}
                     </span>
                   </div>}
@@ -123,16 +121,15 @@ const Education = () => {
 
                   {/* Key Courses */}
                   {edu.courses && <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                      <BookOpen className="w-5 h-5" style={{ color: '#261FB3' }} />
+                    <h4 className="text-lg font-semibold text-[#13005A] mb-3 flex items-center gap-2">
+                      <BookOpen className="w-5 h-5" />
                       Key Courses
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {edu.courses?.map((course) => (
                         <span
                           key={course}
-                          className="px-2 py-1 rounded text-xs font-medium text-white"
-                          style={{ backgroundColor: '#0C0950' }}
+                          className="px-2 py-1 rounded-full border border-[#03C988] text-xs font-medium text-[#03C988] bg-[#13005A]"
                         >
                           {course}
                         </span>

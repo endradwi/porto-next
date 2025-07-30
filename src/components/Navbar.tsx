@@ -21,6 +21,9 @@ const Navbar = () => {
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
+    { name: "Education", href: "#education" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -29,8 +32,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow ${
         scrolled
-          ? "bg-[#261FB3] backdrop-blur-md shadow-lg"
-          : "bg-[#161179]"
+          ? "bg-transparent backdrop-blur-md shadow-lg"
+          : "bg-[#13005A] shadow-lg"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +46,8 @@ const Navbar = () => {
                 href={item.href}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-[#FBE4D6] hover:text-blue-600 hover:underline transition-colors duration-200 font-medium"
+                className={` hover:text-blue-600 hover:underline text-sm px-2 transition-colors duration-200 font-semibold 
+                  ${scrolled ? "bg-[#03C988] text-[#13005A] rounded-full py-1" : "text-[#03C988]"}`}
               >
                 {item.name}
               </motion.a>

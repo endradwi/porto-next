@@ -23,7 +23,7 @@ const Projects = () => {
       title: "Modern Learning Menegement System Platform",
       description: "A modern learning management system platform built with Nuxt.js, featuring a user-friendly interface, course management, interactive learning features, and now this platform new build with Next.js. application build by team 3 members and i'm Frontend Developer at this project.",
       technologies: ["Vue.js", "Nuxt.js", "React.js","Next.js", "Tailwind CSS", "Notion", "Figma", "Git"],
-      baseTech: ["Next.js", "React.js", "Tailwind CSS"],
+      baseTech: ["Vue.js", "Nuxt.js", "Next.js", "React"],
       image: ej,
       liveUrl: "https://ejourney.id",
       githubUrl: "#",
@@ -32,7 +32,7 @@ const Projects = () => {
       title: "Registeration System for Klinik Bidan Isti",
       description: "A registeration system for Klinik Bidan Isti, built with Nuxt.js, and Golang, featuring a user-friendly interface, and secure authentication. This application was designed by myself as a fullstack developer.",
       technologies: ["Vue.js", "Nuxt.js","Tailwind CSS", "Golang", "PostgreSQL", "Docker"],
-      baseTech: ["Nuxt.js", "Golang"],
+      baseTech: ["Vue.js", "Nuxt.js", "Golang"],
       image: bidan,
       liveUrl: "https://praktekbidanisti.icu",
       githubUrl: "#",
@@ -50,7 +50,7 @@ const Projects = () => {
       title: "MY Film Tiket",
       description: "A film tiket application built with React.js, and Golang, featuring a user-friendly interface, and secure authentication, application build by team 3 members and i'm Frontend Developer at this project.",
       technologies: ["React.js"],
-      baseTech: ["Three.js", "React.js"],
+      baseTech: ["React", "Golang"],
       image: tiket,
       liveUrl: "#",
       githubUrl: "#",
@@ -58,7 +58,7 @@ const Projects = () => {
   ];
 
   // Get all unique technologies for filter buttons
-  const allBaseTech = ["All", ...Array.from(new Set(projects.flatMap(project => project.baseTech)))];
+  const allBaseTech = ["All", ...Array.from(new Set(projects.flatMap(project => project.baseTech)))].sort();
 
   // Filter projects based on active filter
   const filteredProjects = projects.filter(project => {
@@ -97,7 +97,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-[#161179]">
+    <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -106,10 +106,10 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#FBE4D6] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#03C988] mb-6">
             My Projects
           </h2>
-          <div className="w-24 h-1 bg-[#FBE4D6] mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-[#03C988] mx-auto mb-8"></div>
           
           {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
@@ -117,11 +117,11 @@ const Projects = () => {
               <motion.button
                 key={tech}
                 onClick={() => handleFilterChange(tech)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   activeFilter === tech
-                    ? "bg-[#FBE4D6] text-[#161179] shadow-lg"
+                    ? "bg-[#03C988] text-[#161179] shadow-lg"
                     : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
                 }`}
               >
@@ -135,11 +135,11 @@ const Projects = () => {
           {currentProjects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
+              whileHover={{ y: -3 }}
+              className="group relative bg-[#1C82AD] rounded-xl shadow-lg  overflow-hidden border border-[#03C988] hover:shadow-xl transition-all duration-300"
             >
               {/* Project Image */}
               <div className="h-48 bg-gray-200 flex items-center justify-center overflow-hidden">
@@ -152,20 +152,20 @@ const Projects = () => {
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-xl font-bold text-[#13005A] mb-4">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-white mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech) => (
+                  {project.technologies.sort().map((tech) => (
                     <span
                       key={tech}
-                      className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium"
+                      className="bg-[#13005A] text-[#03C988] px-2 py-1 rounded-full border border-[#03C988] text-xs font-medium"
                     >
                       {tech}
                     </span>
@@ -176,18 +176,18 @@ const Projects = () => {
                 <div className="flex gap-4">
                   <motion.a
                     href={project.liveUrl}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 bg-[#161179] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#0C0950] transition-all duration-200"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center gap-2 bg-[#13005A] text-[#03C988] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#0C0950] transition-all duration-200"
                   >
                     <ExternalLink size={16} />
                     Live Demo
                   </motion.a>
                   <motion.a
                     href={project.githubUrl}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-50 transition-all duration-200"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center gap-2 border border-[#03C988] text-[#13005A] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-50 transition-all duration-200"
                   >
                     <Github size={16} />
                     Code
@@ -209,8 +209,8 @@ const Projects = () => {
             <motion.button
               onClick={goToPreviousPage}
               disabled={currentPage === 1}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                 currentPage === 1
                   ? "bg-gray-300 text-gray-500 cursor-not-allowed"

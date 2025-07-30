@@ -82,10 +82,8 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-[#261FB3] relative overflow-hidden">
+    <section id="experience" className="py-20  relative overflow-hidden">
       {/* Background Light Rays */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-gray-100 opacity-30"></div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           ref={ref}
@@ -94,18 +92,18 @@ const Experience = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#FBE4D6] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#03C988] mb-6">
             WORK EXPERIENCE
           </h2>
-          <div className="w-24 h-1 bg-[#FBE4D6] mx-auto mb-4"></div>
-          <p className="text-[#FBE4D6] text-lg max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-[#03C988] mx-auto mb-4"></div>
+          <p className="text-white text-lg max-w-2xl mx-auto">
             My professional journey through different companies and roles
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Central Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-2 h-full bg-[#FBE4D6] rounded-full"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-2 h-full bg-[#1C82AD] rounded-full"></div>
           
           {experiences.map((experience, index) => (
             <motion.div
@@ -126,31 +124,31 @@ const Experience = () => {
                     {experience.year.slice(-2)}
                   </div>
                   {/* Connecting line to content */}
-                  <div className={`absolute top-1/2 transform -translate-y-1/2 w-8 h-0.5 bg-[#FBE4D6] hidden md:block left-full`}></div>
+                  <div className={`absolute top-1/2 transform -translate-y-1/2 w-8 h-0.5 bg-white hidden md:block left-full`}></div>
                 </div>
 
                 {/* Content Card */}
-                <div className={`bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-sm md:max-w-md border border-gray-100 relative ${
+                <div className={`bg-[#1C82AD] rounded-xl shadow-lg p-6 md:p-8 max-w-sm md:max-w-md border border-[#03C988] relative ${
                   index % 2 === 0 ? 'md:ml-4' : 'md:mr-12'
                 }`}>
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      <h3 className="text-xl font-bold text-[#13005A] mb-2">
                         {experience.title}
                       </h3>
-                      <div className="flex items-center gap-2 text-blue-600 font-semibold mb-2">
+                      <div className="flex items-center gap-2 text-[#00337C] font-semibold mb-2">
                         <Building2 className="w-4 h-4" />
                         {experience.company}
                       </div>
                     </div>
-                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+                    <span className="bg-[#13005A] text-[#03C988] px-3 py-1 rounded-full text-xs font-semibold">
                       {experience.type}
                     </span>
                   </div>
 
                   {/* Location and Period */}
-                  <div className="flex flex-col sm:flex-row gap-4 mb-4 text-sm text-gray-600">
+                  <div className="flex flex-col sm:flex-row gap-4 mb-4 text-sm text-[#00337C]">
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4" />
                       {experience.location}
@@ -163,10 +161,10 @@ const Experience = () => {
 
                   {/* Description */}
                   <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-500 mb-2 uppercase tracking-wide">
+                    <h4 className="text-sm font-bold text-[#13005A] mb-2 uppercase tracking-wide">
                       Description
                     </h4>
-                    <ul className="list-disc list-inside text-gray-700 leading-relaxed text-sm">
+                    <ul className="list-disc list-inside text-white leading-relaxed text-sm">
                       {experience.description.map((point, pointIndex) => (
                         <li key={pointIndex}>{point}</li>
                       ))}
@@ -175,14 +173,14 @@ const Experience = () => {
 
                   {/* Technologies */}
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-500 mb-3 uppercase tracking-wide">
+                    <h4 className="text-sm font-bold text-[#13005A] mb-3 uppercase tracking-wide">
                       Technologies & Tools
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {experience.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium border border-blue-200"
+                          className="bg-[#13005A] text-[#03C988] px-3 py-1 rounded-full text-xs font-medium border border-[#03C988]"
                         >
                           {tech}
                         </span>

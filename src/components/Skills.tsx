@@ -62,7 +62,7 @@ const Skills = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]);
 
   return (
-    <section id="skills" className="py-20 bg-[#161179] relative overflow-hidden">
+    <section id="skills" className="py-52 relative overflow-hidden">
       {/* Background decorative elements */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -73,10 +73,11 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#FBE4D6] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#03C988] mb-6">
             My Skills
           </h2>
-          <p className="text-lg text-[#FBE4D6]/70 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-[#03C988] mx-auto mb-4"></div>
+          <p className="text-lg text-white max-w-2xl mx-auto">
             Trusted by Several Leading Technologies and Frameworks
           </p>
         </motion.div>
@@ -118,7 +119,7 @@ const Skills = () => {
                   }}
                   className="group relative flex-shrink-0"
                 >
-                  <div className="bg-white rounded-xl border-b-10 border-b-[#FBE4D6] shadow-lg p-6 text-center border border-gray-100 hover:shadow-xl transition-all duration-300 min-w-[140px]">
+                  <div className="bg-white rounded-xl border-b-10 border-b-[#03C988] shadow-lg p-6 text-center border border-gray-100 hover:shadow-xl transition-all duration-300 min-w-[140px]">
                     <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${skill.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
                       {skill.logo}
                     </div>
